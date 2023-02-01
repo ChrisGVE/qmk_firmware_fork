@@ -1,5 +1,4 @@
 USER_NAME := chrisgve
-APPLE_FN_ENABLE = yes
 
 NKRO_ENABLE = yes
 MOUSEKEY_ENABLE = yes
