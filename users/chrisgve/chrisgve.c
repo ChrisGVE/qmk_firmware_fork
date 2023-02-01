@@ -194,7 +194,7 @@ void set_mse_rgb(void) {
     set_rgb(RGB_MSE_R, RGB_MSE_G, RGB_MSE_B);
 }
 
-void set_gmg_rbg(void) {
+void set_gmg_rgb(void) {
     set_rgb(RGB_GMG_R, RGB_GMG_G, RGB_GMG_B);
 }
 
@@ -403,7 +403,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         case _GAMING:
             cur_layer   = _GMG_L;
             def_layer   = false;
-            set_gmg_rbg();
+            set_gmg_rgb();
             break;
         default:
             cur_layer   = _DEF_L;
