@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "chrisgve.h"
 
-led_config_t g_led_config = { {
+/* led_config_t g_led_config = { {
   // Key Matrix to LED Index
   {   0,		1,		2,		3,		4,		5,		6,		7,		8,		9,		10,		11,		12,		13,		14},
   {   15,		NO_LED, 16,		17,		18,		19,		20,		21,		22,		23,		24,		25,		26,		27,		28},
@@ -22,7 +22,7 @@ led_config_t g_led_config = { {
 	  4, 				4, 		4, 		4, 		4, 		4, 		4, 		4, 		4, 		4, 		4, 		4, 		  		4,
 				4, 		4, 		4, 		4, 		4, 		4, 		4, 		4, 		4, 		4, 		4, 				4, 		4,
 	  4, 				4, 		4, 		 		  		        4, 		  		  		  		4, 		  		4, 		4,
-} };
+} }; */
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
