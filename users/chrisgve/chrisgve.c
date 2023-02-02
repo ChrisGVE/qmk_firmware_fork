@@ -23,7 +23,7 @@ __attribute__((weak)) layer_state_t layer_state_set_keymap(layer_state_t state) 
 }
 
 #ifdef RGB_MATRIX_ENABLE
-__attribute__((weak)) void rgb_matrix_indicators_keymap(void) {}
+__attribute__((weak)) bool rgb_matrix_indicators_keymap(void) { return true; }
 #endif
 
 /*****************************************
@@ -199,7 +199,7 @@ void set_gmg_rgb(void) {
 }
 
 #ifdef RGB_MATRIX_ENABLE
-void rgb_matrix_indicators_user(void) {
+bool rgb_matrix_indicators_user(void) {
     switch (cur_layer) {
         case _DEF_L:
             if (caps_lock) {
@@ -229,6 +229,7 @@ void rgb_matrix_indicators_user(void) {
 
     // Board specific handling
     rgb_matrix_indicators_keymap();
+    return true;
 }
 #endif
 
