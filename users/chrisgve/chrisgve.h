@@ -112,6 +112,11 @@ enum custom_keycodes {
 #define SLS_SFT RSFT_T(KC_SLSH)
 #define FN_NUM LT(_ADJUST, KC_NO)
 
+#define WM_UP   RGUI_T(KC_UP)
+#define WM_DOWN RGUI_T(KC_DOWN)
+#define WM_LEFT RGUI_T(KC_LEFT)
+#define WM_RGHT RGUI_T(KC_RIGHT)
+
 #define L_MOD LT(_RAISE, KC_SPC) // for split space bar, left bar
 #define R_MOD LT(_LOWER, KC_SPC) // for split space bar, right bar
 //#define R_MOD       RCTL_T(KC_SPC)  // for split space bar, right bar
