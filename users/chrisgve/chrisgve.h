@@ -17,6 +17,10 @@
 
 #include QMK_KEYBOARD_H
 
+#ifndef IGNORE_MOD_TAP_INTERRUPT
+#define IGNORE_MOD_TAP_INTERRUPT
+#endif
+
 // Custom layers
 enum default_layers {
     _QWERTY_MAC,   // QWERTY Mac base layout
@@ -112,10 +116,10 @@ enum custom_keycodes {
 #define SLS_SFT RSFT_T(KC_SLSH)
 #define FN_NUM LT(_ADJUST, KC_NO)
 
-#define WM_UP   RGUI_T(KC_UP)
-#define WM_DOWN RGUI_T(KC_DOWN)
-#define WM_LEFT RGUI_T(KC_LEFT)
-#define WM_RGHT RGUI_T(KC_RIGHT)
+#define WM_UP   RGUI(KC_UP)
+#define WM_DOWN RGUI(KC_DOWN)
+#define WM_LEFT RGUI(KC_LEFT)
+#define WM_RGHT RGUI(KC_RIGHT)
 
 #define L_MOD LT(_RAISE, KC_SPC) // for split space bar, left bar
 #define R_MOD LT(_LOWER, KC_SPC) // for split space bar, right bar
