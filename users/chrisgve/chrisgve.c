@@ -88,7 +88,7 @@ typedef enum { TD_NONE, TD_UNKNOWN, TD_SINGLE_TAP, TD_SINGLE_HOLD, TD_DOUBLE_SIN
 // Global instacne of the tapdacne state type
 static td_state_t td_state;
 
-td_state_t cur_dance(qk_tap_dance_state_t *state) {
+td_state_t cur_dance(tap_dance_state_t *state) {
     if (state->count == 1) {
         if (state->interrupted || !state->pressed)
             return TD_SINGLE_TAP;
@@ -102,7 +102,7 @@ td_state_t cur_dance(qk_tap_dance_state_t *state) {
         return TD_UNKNOWN;
 }
 
-void cps_ctl_finished(qk_tap_dance_state_t *state, void *user_data) {
+void cps_ctl_finished(tap_dance_state_t *state, void *user_data) {
     td_state = cur_dance(state);
     switch (td_state) {
         case TD_SINGLE_TAP:
@@ -121,7 +121,7 @@ void cps_ctl_finished(qk_tap_dance_state_t *state, void *user_data) {
     }
 }
 
-void cps_ctl_reset(qk_tap_dance_state_t *state, void *user_data) {
+void cps_ctl_reset(tap_dance_state_t *state, void *user_data) {
     switch (td_state) {
         case TD_SINGLE_TAP:
             if (caps_lock) {
@@ -140,7 +140,7 @@ void cps_ctl_reset(qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap Dance definition
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
 // Tap once or Shift, twice for mouse layer
 #    ifdef MOUSEKEY_ENABLE
     [TD_LSHIFT_MOUSE] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_LSFT, _EX_MOUSE),
