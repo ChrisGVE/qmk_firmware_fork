@@ -23,7 +23,9 @@ __attribute__((weak)) layer_state_t layer_state_set_keymap(layer_state_t state) 
 }
 
 #ifdef RGB_MATRIX_ENABLE
-__attribute__((weak)) bool rgb_matrix_indicators_keymap(void) { return true; }
+__attribute__((weak)) bool rgb_matrix_indicators_keymap(void) {
+    return true;
+}
 #endif
 
 /*****************************************
@@ -60,11 +62,11 @@ enum generic_layer_t {
     _GMG_L,
 };
 
-bool    caps_lock   = false;
-bool    def_layer   = true;
-uint8_t cur_layer   = _DEF_L;
+bool    caps_lock = false;
+bool    def_layer = true;
+uint8_t cur_layer = _DEF_L;
 #ifdef MOUSEKEY_ENABLE
-bool    mouse_layer = false;
+bool mouse_layer = false;
 #endif
 
 #ifdef MODIFIERS_ENABLE
@@ -145,7 +147,7 @@ tap_dance_action_t tap_dance_actions[] = {
 #    ifdef MOUSEKEY_ENABLE
     [TD_LSHIFT_MOUSE] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_LSFT, _EX_MOUSE),
 #    endif
-    [TD_ADJ_NUM] = ACTION_TAP_DANCE_LAYER_TOGGLE(ADJUST, _NUM),
+    [TD_ADJ_NUM]   = ACTION_TAP_DANCE_LAYER_TOGGLE(ADJUST, _NUM),
     [TD_CTRL_CAPS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, cps_ctl_finished, cps_ctl_reset),
 };
 
@@ -402,8 +404,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             set_mse_rgb();
             break;
         case _GAMING:
-            cur_layer   = _GMG_L;
-            def_layer   = false;
+            cur_layer = _GMG_L;
+            def_layer = false;
             set_gmg_rgb();
             break;
         default:
@@ -421,7 +423,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return layer_state_set_keymap(state);
 }
 
-// Handling of CAPS LOCK
+// Handling of CAPS LOCK -- This version is now deprecated
+/*
 void led_set_user(uint8_t usb_led) {
     if (usb_led & (1 << USB_LED_CAPS_LOCK)) {
         set_caps_rgb();
@@ -433,7 +436,19 @@ void led_set_user(uint8_t usb_led) {
         caps_lock = false;
     }
 }
+*/
 
+bool led_update_user(led_t usb_led) {
+    caps_lock = usb_led.caps_lock;
+    if (usb_led.caps_lock) {
+        set_caps_rgb();
+    } else {
+        if (def_layer) {
+            reset_rgb();
+        }
+    }
+    return false;
+}
 // Keyboard post init
 void keyboard_post_init_user(void) {
     // Read the user config from EEPROM
