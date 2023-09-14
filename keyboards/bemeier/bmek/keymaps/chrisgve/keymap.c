@@ -17,6 +17,7 @@
 
 #include "chrisgve.h"
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    [_GAMING] = LAYOUT_hhkb(
@@ -110,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [_ADJUST] = LAYOUT_hhkb(
 	  _______,  _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,    KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, _______,
       _______,  QK_BOOT, MAC_SWT, _______, WIN_SWT, _______, _______,  _______, _______, _______, _______, _______, _______, _______, KC_DEL,
-      _______,  KC_CAPS, DF_M_P,  DF_L_P,  DF_W_P,  _______, _______,  KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, _______, _______, _______, 
+      _______,  KC_CAPS, DF_M_P,  DF_L_P,  DF_W_P,  _______, _______,  KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, _______, _______, _______,
       _______,  _______, DF_MAC,  DF_LNX,  DF_WIN,  _______, _______,  _______, _______, KC_MUTE, _______, _______, _______, _______, _______,
                          _______, _______,          KC_MPLY,                    KC_MPLY,          _______, _______
     ),
@@ -132,3 +133,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 };
+
+// clang-format on

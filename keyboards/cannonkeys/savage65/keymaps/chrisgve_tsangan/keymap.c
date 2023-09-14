@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "chrisgve.h"
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_QWERTY_MAC] = LAYOUT_65_ansi_tsangan(
@@ -107,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		QK_BOOT, MAC_SWT, _______, WIN_SWT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
 		_______, DF_M_P,  DF_L_P,  DF_W_P,  _______, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, _______, _______,          _______,          _______,
 		_______,          DF_MAC,  DF_LNX,  DF_WIN,  _______, _______, KC_MUTE, _______, _______, _______, _______, KC_APFN, KC_VOLU, _______, _______,
-		_______, _______, _______,                                     KC_MPLY,                                     KC_MPRV, KC_VOLD, KC_MNXT, _______ 
+		_______, _______, _______,                                     KC_MPLY,                                     KC_MPRV, KC_VOLD, KC_MNXT, _______
     ),
 
     [_ADJUST_LINUX] = LAYOUT_65_ansi_tsangan(
@@ -115,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		QK_BOOT, MAC_SWT, _______, WIN_SWT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
 		_______, DF_M_P,  DF_L_P,  DF_W_P,  _______, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, _______, _______,          _______,          _______,
 		_______,          DF_MAC,  DF_LNX,  DF_WIN,  _______, _______, KC_MUTE, _______, _______, _______, _______, INV_AFN, KC_VOLU, _______, _______,
-		_______, _______, _______,                                     KC_MPLY,                                     KC_MPRV, KC_VOLD, KC_MNXT, _______ 
+		_______, _______, _______,                                     KC_MPLY,                                     KC_MPRV, KC_VOLD, KC_MNXT, _______
     ),
 
     [_ADJUST_WIN] = LAYOUT_65_ansi_tsangan(
@@ -143,3 +144,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 };
+// clang-format on

@@ -17,6 +17,7 @@
 
 #include "chrisgve.h"
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_GAMING] = LAYOUT_alice_split_bs(
@@ -132,6 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 };
+// clang-format on
 
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
@@ -141,15 +143,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         } else {
             tap_code(KC_VOLD);
         }
-    }
-    else if (index == 1) {
+    } else if (index == 1) {
         if (clockwise) {
             tap_code(KC_LEFT);
         } else {
             tap_code(KC_RGHT);
         }
-    }
-    else if (index == 2) {
+    } else if (index == 2) {
         if (clockwise) {
             tap_code(KC_UP);
         } else {
@@ -159,4 +159,4 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return true;
 }
 
-  #endif
+#endif

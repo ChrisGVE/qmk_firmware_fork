@@ -1,37 +1,33 @@
 #include QMK_KEYBOARD_H
 
 /* Copyright 2021 Christian C. Berclaz
-  *
-  * This program is free software: you can redistribute it and/or modify
-  * it under the terms of the GNU General Public License as published by
-  * the Free Software Foundation, either version 2 of the License, or
-  * (at your option) any later version.
-  *
-  * This program is distributed in the hope that it will be useful,
-  * but WITHOUT ANY WARRANTY; without even the implied warranty of
-  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  * GNU General Public License for more details.
-  *
-  * You should have received a copy of the GNU General Public License
-  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  */
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
-enum ansi_layers {
-    _QWERTY,
-    _DIR,
-    _FULL_DIR,
-    _FN
-};
+enum ansi_layers { _QWERTY, _DIR, _FULL_DIR, _FN };
 
-#define CPS_CTL     CTL_T(KC_CAPS)
-#define FN          MO(_FN)
-#define D_DIR       LT(_DIR, KC_D)
-#define F_DIR       MO(_FULL_DIR)
-#define F_WORD      A(KC_RIGHT)
-#define B_WORD      A(KC_LEFT)
-#define S_SHIFT     SFT_T(KC_S)
-#define R_SHIFT     RSFT_T(KC_BSLS)
+#define CPS_CTL CTL_T(KC_CAPS)
+#define FN MO(_FN)
+#define D_DIR LT(_DIR, KC_D)
+#define F_DIR MO(_FULL_DIR)
+#define F_WORD A(KC_RIGHT)
+#define B_WORD A(KC_LEFT)
+#define S_SHIFT SFT_T(KC_S)
+#define R_SHIFT RSFT_T(KC_BSLS)
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT_60_ansi(
         QK_GESC, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSLS,
@@ -65,3 +61,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______,                            KC_MPLY,                            _______, _______, _______, _______
     ),
 };
+// clang-format on

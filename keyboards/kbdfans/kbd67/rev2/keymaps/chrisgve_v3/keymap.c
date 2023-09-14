@@ -18,6 +18,7 @@
 // Defines the keycodes used by our macros in process_record_user
 #include "chrisgve.h"
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_GAMING] = LAYOUT_65_ansi_blocker_split_bs(
@@ -132,4 +133,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 };
-
+// clang-format on
