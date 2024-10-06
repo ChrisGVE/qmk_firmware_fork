@@ -3,6 +3,12 @@ SHIFT_ENABLE = yes
 LTO_ENABLE = yes
 SRC += chrisgve.c
 
+ifdef USER_NAME
+	ifeq ($(strip $(USER_NAME)), chrisgve)
+		OPT_DEFS += -DCHRISGVE
+	endif
+endif
+
 ifeq ($(strip $(REDUCE_RGB)), yes)
 	OPT_DEFS += -DREDUCE_RGB
 endif

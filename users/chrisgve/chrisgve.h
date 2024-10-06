@@ -18,15 +18,17 @@
 #include QMK_KEYBOARD_H
 
 #ifndef IGNORE_MOD_TAP_INTERRUPT
-#define IGNORE_MOD_TAP_INTERRUPT
+#    define IGNORE_MOD_TAP_INTERRUPT
 #endif
 
 // Custom layers
 enum default_layers {
-    _QWERTY_MAC,   // QWERTY Mac base layout
-    _MAC_NAV_1,    // Mac Navigation layer 1
-    _MAC_NAV_2,    // Mac Navigation layer 2
-    _QWERTY_WIN,   // QWERTY Windows base layout
+    _QWERTY_MAC, // QWERTY Mac base layout
+    MAC_BASE = _QWERTY_MAC,
+    _MAC_NAV_1,  // Mac Navigation layer 1
+    _MAC_NAV_2,  // Mac Navigation layer 2
+    _QWERTY_WIN, // QWERTY Windows base layout
+    WIN_BASE = _QWERTY_WIN,
     _WIN_NAV_1,    // Windows Navigation layer 1
     _WIN_NAV_2,    // Windows Navigation layer 2
     _QWERTY_LINUX, // QWERTY Linux base layout
@@ -44,14 +46,14 @@ enum default_layers {
 
 // Custom keys
 enum custom_keycodes {
-    QWERTY = SAFE_RANGE, // Key that allows to fall back to the default layer
-    DF_M_P,              // Make Mac layer the default persistent layer
-    DF_L_P,              // Make Linux layer the default persistent layer
-    DF_W_P,              // Make Windows layer the default persistent layer
-    WIN_SWT,             // Function keys F1 to F12 behave as expected
-    MAC_SWT,             // Function keys F1 to F12 behave as expected if Apple Fn is sent
-    CU_BSPC,             // Acts as normal Backspace and Delete when shifted
-    CU_SPBC,             // Acts as normal Space and Backspace when shifted
+    QWERTY = SAFE_RANGE,
+    DF_M_P,  // Make Mac layer the default persistent layer
+    DF_L_P,  // Make Linux layer the default persistent layer
+    DF_W_P,  // Make Windows layer the default persistent layer
+    WIN_SWT, // Function keys F1 to F12 behave as expected
+    MAC_SWT, // Function keys F1 to F12 behave as expected if Apple Fn is sent
+    CU_BSPC, // Acts as normal Backspace and Delete when shifted
+    CU_SPBC, // Acts as normal Space and Backspace when shifted
     NEW_SAFE_RANGE
 };
 
@@ -116,14 +118,14 @@ enum custom_keycodes {
 #define SLS_SFT RSFT_T(KC_SLSH)
 #define FN_NUM LT(_ADJUST, KC_NO)
 
-#define WM_UP   RGUI(KC_UP)
+#define WM_UP RGUI(KC_UP)
 #define WM_DOWN RGUI(KC_DOWN)
 #define WM_LEFT RGUI(KC_LEFT)
 #define WM_RGHT RGUI(KC_RIGHT)
 
 #define L_MOD LT(_RAISE, KC_SPC) // for split space bar, left bar
 #define R_MOD LT(_LOWER, KC_SPC) // for split space bar, right bar
-//#define R_MOD       RCTL_T(KC_SPC)  // for split space bar, right bar
+// #define R_MOD       RCTL_T(KC_SPC)  // for split space bar, right bar
 
 #ifndef MODIFIERS_ENABLE
 #    define CU_BSPC KC_BSPC
@@ -598,7 +600,7 @@ enum custom_keycodes {
 #    ifdef MOUSEKEY_ENABLE
 // mouse parameters setup
 #        define MK_KINETIC_SPEED
-#        define MOUSEKEY_WHEEL_TIME_TO_MAX 80
+// #        define MOUSEKEY_WHEEL_TIME_TO_MAX 80
 #    endif
 
 // Tap Dance declarations
@@ -621,7 +623,7 @@ enum { TD_LSHIFT_MOUSE, TD_CTRL_CAPS, TD_ADJ_NUM };
 
 #endif
 
-//#define TAPPING_TOGGLE 2
+// #define TAPPING_TOGGLE 2
 #define M_TG_N1 TG(_MAC_NAV_1)
 #define L_TG_N1 TG(_LINUX_NAV_1)
 #define W_TG_N1 TG(_WIN_NAV_1)
