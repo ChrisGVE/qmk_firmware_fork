@@ -1,8 +1,4 @@
-<<<<<<< HEAD:keyboards/kbdfans/kbd67/rev2/keymaps/chrisgve/config.h
 /* Copyright 2018 MechMerlin
-=======
-/* Copyright 2021 QMK
->>>>>>> 6567b2168881ce8c47e38debcdc89eba1ac80c5a:quantum/utf8.h
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,4 +20,3 @@
 // #define FORCE_NKRO
 
 #define BACKLIGHT_CAPS_LOCK
-

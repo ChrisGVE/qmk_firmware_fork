@@ -1,5 +1,4 @@
 #include "chrisgve.h"
-
 /*****************************************
  *
  *   Placeholder functions implementable in the respective keymaps
@@ -154,6 +153,14 @@ tap_dance_action_t tap_dance_actions[] = {
 #endif
 
 // RGB Handling
+
+#ifdef RGBLIGHT_ENABLE
+void disable_rgb(void) {
+#    ifdef RBGLIGHT_ENABLE
+    rgblight_disable();
+#    endif
+}
+#endif
 
 void reset_rgb(void) {
 #ifdef RGB_MATRIX_ENABLE
@@ -455,7 +462,12 @@ void keyboard_post_init_user(void) {
     user_config.raw = eeconfig_read_user();
 
     // Init RGB
+#ifdef RGBLIGHT_DISABLE
+    disable_rgb();
     reset_rgb();
+#else
+    reset_rgb();
+#endif
 
     // Call specific board initialization
     keyboard_post_init_keymap();

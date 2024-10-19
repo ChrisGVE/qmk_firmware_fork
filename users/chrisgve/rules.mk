@@ -29,6 +29,10 @@ ifeq ($(strip $(TAPPING_TERM_PER_KEY)), yes)
 	OPT_DEFS += -DTAPPING_TERM_PER_KEY
 endif
 
+ifeq ($(strip $(RGBLIGHT_DISABLE)), yes)
+	OPT_DEFS += -DRGBLIGHT_DISABLE
+endif
+
 ifeq ($(strip $(PERMISSIVE_HOLD_PER_KEY)), yes)
 	OPT_DEFS += -DPERMISSIVE_HOLD_PER_KEY
 endif
